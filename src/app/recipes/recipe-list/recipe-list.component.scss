@@ -1,0 +1,14 @@
+.card1 {
+  background: rgba(214, 207, 207, 0.377);
+  box-shadow: 3px 3px 3px grey;
+  border: 0.2rem black;
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card-container h2 {
+  margin: 0;
+  padding: 0.5rem;
+}
