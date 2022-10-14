@@ -9,7 +9,7 @@ import { RecipeService } from 'src/app/shared/services/recipe.service';
   styleUrls: ['./recipe-list.component.scss'],
 })
 export class RecipeListComponent implements OnInit {
-  @Output() recipeWasSelected = new EventEmitter<RECIPE>();
+  // @Output() recipeWasSelected = new EventEmitter<RECIPE>();
   recipes: RECIPE[];
   constructor(private recipeService: RecipeService) {}
 
@@ -17,7 +17,7 @@ export class RecipeListComponent implements OnInit {
     this.recipes = this.recipeService.getRecipes();
   }
 
-  onRecipeSelected(recipeEl: RECIPE) {
-    this.recipeWasSelected.emit(recipeEl);
-  }
+  // onRecipeSelected(recipeEl: RECIPE) {
+  //   this.recipeWasSelected.emit(recipeEl);
+  // }
 }

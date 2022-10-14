@@ -6,6 +6,9 @@
 .card {
   border: 2px solid rgba(0, 0, 0, 0.097);
 }
+.card:hover {
+  cursor: pointer;
+}
 .card-body {
   display: flex;
   flex-direction: row;
