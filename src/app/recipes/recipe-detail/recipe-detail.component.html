@@ -1,11 +1,54 @@
 <div class="row">
   <div class="col-xs-12">
-    <img src="" alt="" class="img-responsive" />
+    <!--  -->
+    <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 400px">
+      <img src="{{ recipe.imagePath }}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h2 class="card-title">{{ recipe.name }}</h2>
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                of the card's content.</p> -->
+        <!-- <div class="row"> -->
+        <div class="card-text">
+          <div class="col-xs-12">Description: {{ recipe.description }}</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">Ingredients</div>
+        </div>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <div class="dropdown" appDropdown>
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Manage Recipe
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">Add Ingredients</a></li>
+            <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
+            <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
+          </ul>
+        </div>
+        <!-- <div class="btn-group">
+          <button class="btn btn-primary dropdown-toggle">
+            Manage Recipe <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Add Ingredients</a></li>
+            <li><a href="#">Edit Recipe</a></li>
+            <li><a href="#">Delete Recipe</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+        <!--  -->
+        <!-- <img src="" alt="" class="img-responsive" />
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h1>Recipe Name</h1>
+    <h1>Recipe Name:{{ recipe.name }}</h1>
   </div>
 </div>
 <div class="row">
@@ -23,8 +66,12 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">Description</div>
+  <div class="col-xs-12">Description: {{ recipe.description }}</div>
 </div>
 <div class="row">
   <div class="col-xs-12">Ingredients</div>
+</div> -->
+      </div>
+    </div>
+  </div>
 </div>

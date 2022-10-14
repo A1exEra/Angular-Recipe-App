@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'angular-recipe-app';
   constructor() {}
-
+  onMenuClicked: string = '';
   ngOnInit(): void {}
+  onRecipeOrShopping(event) {
+    this.onMenuClicked = event;
+  }
 }

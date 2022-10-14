@@ -1,13 +1,18 @@
-<app-header></app-header>
+<app-header
+  style="position: fixed; top: 0; z-index: 10; width: 100%"
+  (onSelect)="onRecipeOrShopping($event)"
+></app-header>
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
       <h1>This is the main component of the app</h1>
-      <input type="text" [(ngModel)]="title" />
+      <!-- <input type="text" [(ngModel)]="title" />
       <p>{{ title }}</p>
-      <hr />
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <hr /> -->
+      <app-recipes *ngIf="onMenuClicked === 'recipe'"></app-recipes>
+      <app-shopping-list
+        *ngIf="onMenuClicked === 'shopping'"
+      ></app-shopping-list>
     </div>
   </div>
   <router-outlet></router-outlet>

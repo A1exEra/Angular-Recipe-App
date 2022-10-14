@@ -1,0 +1,23 @@
+// .card1 {
+//   background: rgba(214, 207, 207, 0.377);
+//   box-shadow: 3px 3px 3px grey;
+//   border: 0.2rem black;
+// }
+.card {
+  border: 2px solid rgba(0, 0, 0, 0.097);
+}
+.card-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+.card-body h2 {
+  margin: 0;
+  padding: 0.5rem;
+}
+.card-body p {
+  margin: 0;
+  padding: 0rem 0.5rem;
+}
