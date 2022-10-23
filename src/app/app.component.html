@@ -6,9 +6,6 @@
   <div class="row">
     <div class="col-xs-12">
       <h1>This is the main component of the app</h1>
-      <!-- <input type="text" [(ngModel)]="title" />
-      <p>{{ title }}</p>
-      <hr /> -->
       <app-recipes *ngIf="onMenuClicked === 'recipe'"></app-recipes>
       <app-shopping-list
         *ngIf="onMenuClicked === 'shopping'"

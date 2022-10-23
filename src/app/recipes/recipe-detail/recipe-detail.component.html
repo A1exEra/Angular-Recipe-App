@@ -12,7 +12,17 @@
           <div class="col-xs-12">Description: {{ recipe.description }}</div>
         </div>
         <div class="row">
-          <div class="col-xs-12">Ingredients</div>
+          <div class="col-xs-12">
+            <p>Ingredients:</p>
+            <ul class="list-group">
+              <li
+                class="list-group-item"
+                *ngFor="let ingredient of recipe.ingredients"
+              >
+                {{ ingredient.name }} ({{ ingredient.ammount }})
+              </li>
+            </ul>
+          </div>
         </div>
         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         <div class="dropdown" appDropdown>
@@ -25,7 +35,14 @@
             Manage Recipe
           </button>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Add Ingredients</a></li>
+            <li>
+              <a
+                class="dropdown-item"
+                style="cursor: pointer"
+                (click)="onAddIngredients()"
+                >Add Ingredients</a
+              >
+            </li>
             <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
             <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
           </ul>

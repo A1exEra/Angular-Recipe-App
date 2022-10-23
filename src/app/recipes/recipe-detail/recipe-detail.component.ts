@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RECIPE } from 'src/app/shared/Models/recipe.model';
+import { ShoppingListService } from 'src/app/shared/services/shopping-list.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -7,11 +8,11 @@ import { RECIPE } from 'src/app/shared/Models/recipe.model';
   styleUrls: ['./recipe-detail.component.scss'],
 })
 export class RecipeDetailComponent implements OnInit {
-  constructor() {}
+  constructor(private shoppingListService: ShoppingListService) {}
   @Input() recipe: RECIPE;
-  // dropDownOpen = false;
   ngOnInit(): void {}
-  // openDropdown() {
-  //   this.dropDownOpen = !this.dropDownOpen;
   // }
+  onAddIngredients() {
+    this.shoppingListService.addIngredients(this.recipe.ingredients);
+  }
 }
