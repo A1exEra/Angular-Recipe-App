@@ -7,11 +7,11 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   navCollapse = true;
-  @Output() onSelect = new EventEmitter<string>();
-  constructor() {}
+  // @Output() onSelect = new EventEmitter<string>();
+  // constructor() {}
 
   ngOnInit(): void {}
-  onClick(input: string) {
-    this.onSelect.emit(input);
-  }
+  // onClick(input: string) {
+  //   this.onSelect.emit(input);
+  // }
 }
