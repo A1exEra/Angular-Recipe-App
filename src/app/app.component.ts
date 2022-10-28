@@ -6,11 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'angular-recipe-app';
+  // title = 'angular-recipe-app';
   constructor() {}
-  onMenuClicked: string = '';
+  // onMenuClicked: string = '';
   ngOnInit(): void {}
-  onRecipeOrShopping(event) {
-    this.onMenuClicked = event;
-  }
+  // onRecipeOrShopping(event) {
+  //   this.onMenuClicked = event;
+  // }
 }
+/*
+
+
+
+*/

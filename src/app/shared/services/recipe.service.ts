@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { INGREDIENT } from '../Models/ingredient.model';
 import { RECIPE } from '../Models/recipe.model';
 import { ShoppingListService } from './shopping-list.service';
@@ -8,7 +9,9 @@ import { ShoppingListService } from './shopping-list.service';
 })
 export class RecipeService {
   constructor(private shoppingListService: ShoppingListService) {}
-  recipeSelected = new EventEmitter<RECIPE>();
+  // recipeSelected = new EventEmitter<RECIPE>();
+  //replacing this eventemitter with subject, but we do not need it now because we use routnig to render recipes
+  // recipeSelected = new Subject<RECIPE>();
   private recipes: RECIPE[] = [
     {
       name: 'Tasty schnitzel',
