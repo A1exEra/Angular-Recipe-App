@@ -16,10 +16,10 @@
             <p>Ingredients:</p>
             <ul class="list-group">
               <li
-                class="list-group-item"
+                class="list-group-item mb-1"
                 *ngFor="let ingredient of recipe.ingredients"
               >
-                {{ ingredient.name }} ({{ ingredient.ammount }})
+                {{ ingredient.name }} ({{ ingredient.amount }})
               </li>
             </ul>
           </div>
@@ -49,7 +49,12 @@
               >
             </li>
             <li>
-              <a class="dropdown-item" style="cursor: pointer">Delete Recipe</a>
+              <a
+                class="dropdown-item"
+                style="cursor: pointer"
+                (click)="onDelete()"
+                >Delete Recipe</a
+              >
             </li>
           </ul>
         </div>

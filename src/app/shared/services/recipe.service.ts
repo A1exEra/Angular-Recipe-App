@@ -12,6 +12,8 @@ export class RecipeService {
   // recipeSelected = new EventEmitter<RECIPE>();
   //replacing this eventemitter with subject, but we do not need it now because we use routnig to render recipes
   // recipeSelected = new Subject<RECIPE>();
+  //update recipes array when upadating the recipes in the web page
+  recipesChanged = new Subject<RECIPE[]>();
   private recipes: RECIPE[] = [
     {
       name: 'Tasty schnitzel',
@@ -70,5 +72,17 @@ export class RecipeService {
   getRecipe(index: number) {
     // console.log(this.recipes[index]);
     return this.recipes[index];
+  }
+  addRecipe(recipe: RECIPE) {
+    this.recipes.push(recipe);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+  updateRecipe(index: number, newRecipe: RECIPE) {
+    this.recipes[index] = newRecipe;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+  deleteRecipe(index: number) {
+    this.recipes.splice(index, 1);
+    this.recipesChanged.next(this.recipes.slice());
   }
 }
