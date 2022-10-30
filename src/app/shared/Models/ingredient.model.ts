@@ -1,4 +1,4 @@
 export interface INGREDIENT {
   name: string;
-  ammount: number;
+  amount: number;
 }
