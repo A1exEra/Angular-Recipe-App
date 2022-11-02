@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { RECIPE } from 'src/app/shared/Models/recipe.model';
+import { DataStorageService } from 'src/app/shared/services/data-storage.service';
 import { RecipeService } from 'src/app/shared/services/recipe.service';
 
 @Component({
@@ -19,7 +20,10 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   // @Output() recipeWasSelected = new EventEmitter<RECIPE>();
   recipes: RECIPE[];
   subscription: Subscription;
-  constructor(private recipeService: RecipeService) {}
+  constructor(
+    private recipeService: RecipeService,
+    private dataStorageService: DataStorageService
+  ) {}
 
   ngOnInit(): void {
     //listen to the event of upadating the recipes from recipe service
@@ -28,6 +32,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
         this.recipes = recipes;
       }
     );
+    // this.dataStorageService.fetchRecipes();
     this.recipes = this.recipeService.getRecipes();
   }
   ngOnDestroy(): void {
