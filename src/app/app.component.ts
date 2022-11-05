@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,16 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  // title = 'angular-recipe-app';
-  constructor() {}
-  // onMenuClicked: string = '';
-  ngOnInit(): void {}
-  // onRecipeOrShopping(event) {
-  //   this.onMenuClicked = event;
-  // }
+  constructor(private authService: AuthService) {}
+  ngOnInit(): void {
+    this.authService.autoLogin();
+  }
 }
-/*
-
-
-
-*/

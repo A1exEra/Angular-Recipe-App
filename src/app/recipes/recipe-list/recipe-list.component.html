@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success" routerLink="new">NEW RECIPES</button>
+    <button class="btn btn-success" routerLink="new">NEW RECIPE</button>
+    <br />
   </div>
+  <hr />
 </div>
 <div class="row">
   <div class="col-xs-12">
@@ -13,5 +15,6 @@
       [index]="i"
     ></app-recipe-item>
     <!--  -->
+    <h2 *ngIf="recipes.length < 0">No recipes loaded yet</h2>
   </div>
 </div>
