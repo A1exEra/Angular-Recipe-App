@@ -21,6 +21,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthComponent } from './auth/auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterseptorService } from './shared/services/auth-interseptor.service';
+import { AlertComponent } from './shared/alert/alert.component';
+import { PlaceholderDirective } from './shared/directives/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { AuthInterseptorService } from './shared/services/auth-interseptor.servi
     RecipeEditComponent,
     AuthComponent,
     LoadingSpinnerComponent,
+    AlertComponent,
+    PlaceholderDirective,
   ],
   imports: [
     BrowserModule,
@@ -58,5 +62,6 @@ import { AuthInterseptorService } from './shared/services/auth-interseptor.servi
     },
   ],
   bootstrap: [AppComponent],
+  entryComponents: [AlertComponent],
 })
 export class AppModule {}
