@@ -23,6 +23,8 @@ export class AuthService {
   // user = new Subject<USER>();
   //get acces to the token using the behaviorsubject which aalows us to acces the user dat after it has been initialized
   user = new BehaviorSubject<USER>(null);
+  //create a variable to store token expiration timer for the settimeoout in autologout method
+  private tokenExpirationTimer: any;
   signUp(email: string, password: string) {
     //send a post requesst to this URL -
 
@@ -85,6 +87,10 @@ export class AuthService {
     );
     if (loadedUser.token) {
       this.user.next(loadedUser);
+      const expirationDuration =
+        new Date(userData._tokenExpirationDate).getTime() -
+        new Date().getTime();
+      this.autoLogOut(expirationDuration);
     }
   }
 
@@ -92,7 +98,22 @@ export class AuthService {
   logout() {
     this.user.next(null);
     this.router.navigate(['/auth']);
+    localStorage.removeItem('userData');
+    if (this.tokenExpirationTimer) {
+      clearTimeout(this.tokenExpirationTimer);
+    }
+    this.tokenExpirationTimer = null;
   }
+
+  //set a timer to uto log out user
+  autoLogOut(expirationDuration: number) {
+    console.log(`Session Expires in: ${expirationDuration}`);
+    this.tokenExpirationTimer = setTimeout(() => {
+      this.logout();
+      console.log('SESSION EXPIRED!!!!!!!!!');
+    }, expirationDuration);
+  }
+
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'An unknown error occured';
     if (!error.error || !error.error.error) {
@@ -127,6 +148,8 @@ export class AuthService {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
     const user = new USER(email, userId, token, expirationDate);
     this.user.next(user);
+    //activate the autoLogOut timer
+    this.autoLogOut(expiresIn * 1000);
     //store user token in local storage
     localStorage.setItem('userData', JSON.stringify(user));
   }
