@@ -1,0 +1,64 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-6">
+    <!--alert start  -->
+    <div class="alert alert-danger" role="alert" *ngIf="error !== null">
+      <p>{{ error }}</p>
+    </div>
+    <!--alert end  -->
+    <div [ngStyle]="{ 'text-align': 'center' }" *ngIf="isLoading">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+      <!-- email -->
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          ngModel
+          name="email"
+          required
+          email
+          placeholder="name@example.com"
+        />
+        <label for="email">Email address</label>
+      </div>
+      <!-- password -->
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          ngModel
+          name="password"
+          required
+          password
+          minlength="6"
+          placeholder="Password"
+        />
+        <label for="password">Password</label>
+      </div>
+      <!--buttons  -->
+      <div class="row justify-content-between">
+        <div class="col-4">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!authForm.valid"
+          >
+            {{ isLoginMode ? "LOGIN" : "SIGN UP" }}
+          </button>
+        </div>
+        <div class="col-6">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onSwitchMode()"
+          >
+            Switch to {{ isLoginMode ? "Sign Up" : "Login" }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
