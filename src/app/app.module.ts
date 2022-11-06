@@ -8,44 +8,46 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective } from './shared/directives/dropdown.directive';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthComponent } from './auth/auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterseptorService } from './shared/services/auth-interseptor.service';
-import { AlertComponent } from './shared/alert/alert.component';
-import { PlaceholderDirective } from './shared/directives/placeholder.directive';
+import { RecipesModule } from './recipes/recipes.module';
+import { ShoppingModule } from './shopping-list/shopping.module';
+import { SharedModule } from './shared/shared.module';
+// import { AlertComponent } from './shared/alert/alert.component';
+// import { DropdownDirective } from './shared/directives/dropdown.directive';
+// import { PlaceholderDirective } from './shared/directives/placeholder.directive';
+// import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+// import { RecipesComponent } from './recipes/recipes.component';
+// import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
+// import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+// import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+// import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+// import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
+// import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+// import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
     AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceholderDirective,
+    // DropdownDirective,
+    // LoadingSpinnerComponent,
+    // AlertComponent,
+    // PlaceholderDirective,
+    // ShoppingListComponent,
+    // ShoppingEditComponent,
+    // RecipesComponent,
+    // RecipeListComponent,
+    // RecipeDetailComponent,
+    // RecipeItemComponent,
+    // RecipeStartComponent,
+    // RecipeEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     NgbModule,
@@ -53,6 +55,9 @@ import { PlaceholderDirective } from './shared/directives/placeholder.directive'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RecipesModule,
+    ShoppingModule,
+    SharedModule,
   ],
   providers: [
     {
@@ -62,6 +67,6 @@ import { PlaceholderDirective } from './shared/directives/placeholder.directive'
     },
   ],
   bootstrap: [AppComponent],
-  entryComponents: [AlertComponent],
+  // entryComponents: [AlertComponent],
 })
 export class AppModule {}

@@ -99,6 +99,25 @@
 <div class="row">
   <div class="col-xs-12">Ingredients</div>
 </div> -->
+        <!-- start -->
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a style="cursor: pointer" (click)="onAddIngredients()"
+              >Add Ingredients</a
+            >
+          </li>
+          <li class="list-group-item">
+            <a
+              style="cursor: pointer; text-decoration: none; color: #000"
+              routerLink="edit"
+              >Edit Recipe</a
+            >
+          </li>
+          <li class="list-group-item">
+            <a style="cursor: pointer" (click)="onDelete()">Delete Recipe</a>
+          </li>
+        </ul>
+        <!-- end -->
       </div>
     </div>
   </div>
