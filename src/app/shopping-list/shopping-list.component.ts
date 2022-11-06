@@ -1,6 +1,7 @@
 import { Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { INGREDIENT } from '../shared/Models/ingredient.model';
+import { LoggingService } from '../shared/services/logging.service';
 import { ShoppingListService } from '../shared/services/shopping-list.service';
 
 @Component({
@@ -11,9 +12,15 @@ import { ShoppingListService } from '../shared/services/shopping-list.service';
 export class ShoppingListComponent implements OnInit, DoCheck, OnDestroy {
   ingredients: INGREDIENT[];
   private ingredientChangeSubscription: Subscription;
-  constructor(private shoppingListService: ShoppingListService) {}
+  constructor(
+    private shoppingListService: ShoppingListService,
+    private loggingService: LoggingService
+  ) {}
   ngDoCheck(): void {
     // this.ingredients = this.shoppingListService.getIngredients();
+    this.loggingService.printLog(
+      'Hello from the shopping-list compinent ngOnitint'
+    );
   }
 
   ngOnInit(): void {
