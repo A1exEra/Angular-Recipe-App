@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,13 +7,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HeaderComponent } from './header/header.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthComponent } from './auth/auth/auth.component';
-import { RecipesModule } from './recipes/recipes.module';
-import { ShoppingModule } from './shopping-list/shopping.module';
+import { HttpClientModule /*HTTP_INTERCEPTORS */ } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
-import { AuthModule } from './auth/auth.module';
+// import { AuthModule } from './auth/auth.module';
+// import { ShoppingModule } from './shopping-list/shopping.module';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { AuthComponent } from './auth/auth/auth.component';
+// import { RecipesModule } from './recipes/recipes.module';
 // import { AuthInterseptorService } from './shared/services/auth-interseptor.service';
 // import { AlertComponent } from './shared/alert/alert.component';
 // import { DropdownDirective } from './shared/directives/dropdown.directive';
@@ -55,11 +55,11 @@ import { AuthModule } from './auth/auth.module';
     NgbModule,
     MatFormFieldModule,
     HttpClientModule,
-    RecipesModule,
-    ShoppingModule,
     SharedModule,
     CoreModule,
-    AuthModule,
+    // AuthModule,
+    // ShoppingModule,
+    // RecipesModule,
     // FormsModule,
     // ReactiveFormsModule,
   ],
