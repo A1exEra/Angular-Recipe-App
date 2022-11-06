@@ -10,10 +10,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthComponent } from './auth/auth/auth.component';
-import { AuthInterseptorService } from './shared/services/auth-interseptor.service';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingModule } from './shopping-list/shopping.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core.module';
+import { AuthModule } from './auth/auth.module';
+// import { AuthInterseptorService } from './shared/services/auth-interseptor.service';
 // import { AlertComponent } from './shared/alert/alert.component';
 // import { DropdownDirective } from './shared/directives/dropdown.directive';
 // import { PlaceholderDirective } from './shared/directives/placeholder.directive';
@@ -31,7 +33,7 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    AuthComponent,
+    // AuthComponent,
     // DropdownDirective,
     // LoadingSpinnerComponent,
     // AlertComponent,
@@ -52,19 +54,21 @@ import { SharedModule } from './shared/shared.module';
     MatButtonModule,
     NgbModule,
     MatFormFieldModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     RecipesModule,
     ShoppingModule,
     SharedModule,
+    CoreModule,
+    AuthModule,
+    // FormsModule,
+    // ReactiveFormsModule,
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterseptorService,
-      multi: true,
-    },
+    //   {
+    //     provide: HTTP_INTERCEPTORS,
+    //     useClass: AuthInterseptorService,
+    //     multi: true,
+    //   },
   ],
   bootstrap: [AppComponent],
   // entryComponents: [AlertComponent],
